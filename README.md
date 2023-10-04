@@ -21,7 +21,7 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 | KITTI  | [Link](https://www.cvlibs.net/datasets/kitti/eval_odometry.php)  |
 | Argoverse 2  | [Link](https://www.argoverse.org/av2.html#download-link)  |
 | nuScenes  | [Link](https://www.nuscenes.org/nuscenes#download)  |
-| YouTube  | Available Soon |
+| YouTube  | Coming Soon |
 
 ### Environment Requirements and Installation
 ```bash
