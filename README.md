@@ -23,6 +23,22 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 | nuScenes  | [Link](https://www.nuscenes.org/nuscenes#download)  |
 | YouTube  | Available Soon |
 
+### Environment Requirements and Installation
+Please find the 
+
+## Training 
+
+## Inference
+
+## Contact  
+Please don't hesitate to contact us if you have any remarks or questions at leilai@bu.edu or sgzk@bu.edu. 
+
+## License  
+Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
+
+## ToDos  
+- [X] Training code release
+- [ ] Readme Update
 
 
 
