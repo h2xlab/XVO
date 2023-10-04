@@ -24,11 +24,34 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 | YouTube  | Available Soon |
 
 ### Environment Requirements and Installation
-Please find the 
+```bash
+# create a new environment
+conda create --name xvo python=3.9
+conda activate xvo
+
+# install pytorch1.13.1
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 -c pytorch
+
+# install other requirements
+pip install -r requirements.txt
+```
 
 ## Training 
+```
+python main.py
+```
+The model will be saved to 
 
 ## Inference
+```
+python infer.py
+```
+
+## Evaluation
+```
+python test.py
+```
+
 
 ## Contact  
 Please don't hesitate to contact us if you have any remarks or questions at leilai@bu.edu or sgzk@bu.edu. 
