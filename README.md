@@ -60,7 +60,7 @@ We abbreviate 'intrinsics-free' as I (i.e., a method which does not assume the i
 
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
 <p>
-    <img width=900 class="center" alt="Demo 1" src="images/qua_result.png"/ >  
+    <img width=750 class="center" alt="Demo 1" src="images/qua_result.png"/ >  
 </p>   
 
 ## Contact  
