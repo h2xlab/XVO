@@ -52,6 +52,10 @@ python infer.py
 python test.py
 ```
 
+## Result    
+<p>
+    <img width=900 class="center" alt="Demo 1" src="images/result1.png"/ >  
+</p>  
 
 ## Contact  
 Please don't hesitate to contact us if you have any remarks or questions at leilai@bu.edu or sgzk@bu.edu. 
