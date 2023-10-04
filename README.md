@@ -53,11 +53,6 @@ python test.py
 ```
 
 ## Result   
-We abbreviate 'intrinsics-free' as I (i.e., a method which does not assume the intrinsics) and 'real-world scale' as S (i.e., a method is able to recover real-world scale). To ensure meaningful comparison, we categorize models based on supervision type. Firstly, we present unsupervised learning methods, followed by supervised learning methods, then generalized VO methods, and finally our XVO ablation. In the case of TartanVO, we analyze robustness to noise applied to the intrinsics. We train two teacher models: one based on KITTI (as shown in supervised learning approaches) and the other on nuScenes (as displayed at the end of the Table with ablations).  
-<p>
-    <img width=900 class="center" alt="Demo 1" src="images/result1.png"/ >  
-</p>  
-
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
 <p>
     <img width=750 class="center" alt="Demo 1" src="images/qua_result.png"/ >  
