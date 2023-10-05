@@ -29,28 +29,26 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 conda create --name xvo python=3.9
 conda activate xvo
 
-# install pytorch1.13.1
-conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 -c pytorch
+# install pytorch1.13.0
+conda install pytorch=1.13.0 torchvision pytorch-cuda=11.6 -c pytorch -c nvidia
 
-# install other requirements
-pip install -r requirements.txt
+# install pytorch3d
+https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
 ```
 
 ## Training 
 ```
-python main.py
+python3 main.py
 ```
-The model will be saved to 
-
-## Inference
-```
-python infer.py
-```
+Coming soon!
 
 ## Evaluation
 ```
-python test.py
+python3 test.py
+cd vo-eval-tool
+python3 eval_odom.py
 ```
+VO evaluation tool is revised from https://github.com/Huangying-Zhan/kitti-odom-eval.
 
 ## Result   
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
@@ -65,11 +63,5 @@ Please don't hesitate to contact us if you have any remarks or questions at leil
 Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
 
 ## ToDos  
-- [X] Training code release
+- [ ] Training code release
 - [ ] Readme Update
-
-
-
-
-
-
