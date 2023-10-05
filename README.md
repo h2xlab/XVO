@@ -37,9 +37,6 @@ https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
 ```
 
 ## Training 
-```
-python3 main.py
-```
 Coming soon!
 
 ## Evaluation
