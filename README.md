@@ -31,10 +31,8 @@ conda activate xvo
 
 # install pytorch1.13.0
 conda install pytorch=1.13.0 torchvision pytorch-cuda=11.6 -c pytorch -c nvidia
-
-# install pytorch3d
-https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
 ```
+Our environment also requires pytorch3d, and please refer to [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for installation guidlines.
 
 ## Training 
 Coming soon!
