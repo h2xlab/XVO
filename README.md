@@ -63,5 +63,6 @@ Please don't hesitate to contact us if you have any remarks or questions at leil
 Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
 
 ## ToDos  
+- [X] Test code release
 - [ ] Training code release
 - [ ] Readme Update
