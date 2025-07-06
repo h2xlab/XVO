@@ -126,9 +126,13 @@ python3 test_utils.py
 ## Evaluation
 
 ```
-python3 test.py
-cd vo-eval-tool
-python3 eval_odom.py
+cd odom-eval
+# update eval.py
+eval_dirs = ['xvo_kitti_sl']
+```
+and run:
+```
+python3 eval.py
 ```
 VO evaluation tool is revised from https://github.com/Huangying-Zhan/kitti-odom-eval.
 
