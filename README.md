@@ -52,9 +52,12 @@ The labels are available in the [poses](https://github.com/h2xlab/XVO/tree/main/
 ```
 python3 preprocess.py
 ```
-Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/1hS1wsrv89d_zakfXt2lJBaqNnF5FfoHg?usp=sharing).
+Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/16v0U2RoRay7miYKb7LebKlXqZAe0d2tg?usp=sharing).
 
 Supervised Training on KITTI:
+```
+python3 main.py
+```
 
 Semi-supervised Training on nuScenes and YouTube:
 
