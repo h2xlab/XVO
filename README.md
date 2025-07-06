@@ -54,6 +54,7 @@ Supervised Training on KITTI:
 Semi-supervised Training on nuScenes and YouTube:
 
 ## Evaluation
+Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
 ```
 python3 test.py
 cd vo-eval-tool
