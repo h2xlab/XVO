@@ -48,9 +48,14 @@ The correlation package must be installed first:
 cd model/correlation_package
 python setup.py install
 ```
+The labels are available in the [poses](https://github.com/h2xlab/XVO/tree/main/poses) directory. To regenerate the labels or review the corresponding implementation details, please refer to the code and execute the following command:
+```
+python3 preprocess.py
+```
 Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/1hS1wsrv89d_zakfXt2lJBaqNnF5FfoHg?usp=sharing).
 
 Supervised Training on KITTI:
+
 Semi-supervised Training on nuScenes and YouTube:
 
 ## Evaluation
