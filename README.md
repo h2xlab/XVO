@@ -59,6 +59,7 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
 ```
 
 ## Training 
+1. **Install the correlation package**  
 The correlation package must be installed first:
 ```
 cd model/correlation_package
@@ -75,10 +76,7 @@ Supervised Training on KITTI:
 # update params.py
 self.train_video = {'KITTI': ['00', '02', '08', '09'],}
 self.multi_modal = False
-```
-and run:
-```
-python3 main.py
+self.checkpoint_path = 'saved_models/xvo_kitti_sl'
 ```
 
 Cross-Modal Self-Training on nuScenes and YouTube:
@@ -89,11 +87,13 @@ self.train_video = {
     'YouTube': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
     }
 self.multi_modal = True
+self.checkpoint_path = 'saved_models/xvo_nusc_ytb_ssl'
 ```
 and run:
 ```
 python3 main.py
 ```
+## Test
 
 ## Evaluation
 Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
