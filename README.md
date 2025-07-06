@@ -147,8 +147,3 @@ If you have any questions or comments, please feel free to contact us at leilai@
 
 ## License  
 Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
-
-## ToDos  
-- [X] Test code release
-- [ ] Training code release
-- [ ] Readme Update
