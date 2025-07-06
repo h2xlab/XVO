@@ -24,7 +24,14 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 | YouTube  | Approximately 30 hours of driving footage were selected from videos published on the YouTube channel youtube.com/@jutah, featuring a diverse range of driving scenarios. A more comprehensive list of driving videos from YouTube can be found [here](https://docs.google.com/spreadsheets/d/1bHWWP_VXeEe5UzIG-QgKFBdH7mNlSC4GFSJkEhFnt2I/edit?gid=0#gid=0).|
 
 The directory structure within the [data](https://github.com/h2xlab/XVO/tree/main/data) folder is organized as follows:
-``` my-dataset/ ├── dataset_info.json (optional metadata) ├── README.md (optional description) └── data/ ├── train.csv └── test.csv ```
+```bash
+my-dataset/ 
+├── dataset_info.json (optional metadata) 
+├── README.md (optional description) 
+    └── data/ 
+    ├── train.csv 
+    └── test.csv 
+```
 
 ### Environment Requirements and Installation
 ```bash
