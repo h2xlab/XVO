@@ -48,6 +48,8 @@ The correlation package must be installed first:
 cd model/correlation_package
 python setup.py install
 ```
+Initial weights can be found [here]()
+
 Supervised Training on KITTI:
 Semi-supervised Training on nuScenes and YouTube:
 
