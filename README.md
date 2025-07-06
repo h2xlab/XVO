@@ -48,6 +48,8 @@ The correlation package must be installed first:
 cd model/correlation_package
 python setup.py install
 ```
+Supervised Training on KITTI:
+Semi-supervised Training on nuScenes and YouTube:
 
 ## Evaluation
 ```
