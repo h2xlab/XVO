@@ -72,6 +72,12 @@ Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/ma
 
 Supervised Training on KITTI:
 ```
+# update params.py
+self.train_video = {'KITTI': ['00', '02', '08', '09'],}
+self.multi_modal = False
+```
+and run:
+```
 python3 main.py
 ```
 
