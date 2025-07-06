@@ -98,6 +98,7 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
     python3 main.py
     ```
 ## Test
+Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
 
 Supervised Training on KITTI, we test on the rest of KIITI sequences:
 ```
@@ -123,7 +124,7 @@ python3 test_utils.py
 ```
 
 ## Evaluation
-Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
+
 ```
 python3 test.py
 cd vo-eval-tool
