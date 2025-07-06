@@ -26,13 +26,21 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 ### Environment Requirements and Installation
 ```bash
 # create a new environment
-conda create --name xvo python=3.9
-conda activate xvo
+conda create -n XVO python=3.9
+conda activate XVO
+# install pytorch
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install -c iopath iopath
+#install pytorch3d
+wget https://anaconda.org/pytorch3d/pytorch3d/0.7.5/download/linux-64/pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
+conda install pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
+sudo rm pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
 
-# install pytorch1.13.0
-conda install pytorch=1.13.0 torchvision pytorch-cuda=11.6 -c pytorch -c nvidia
+export CUDA_HOME=/usr/local/cuda-11.7
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-python==4.11.0.86 a-unet==0.0.16 mmcv-full==1.7.2 numpy==1.26.4 pillow==11.0.0 av2==0.2.1 nuscenes-devkit==1.1.11
 ```
-Our environment also requires pytorch3d, and please refer to [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for installation guidlines.
 
 ## Training 
 Coming soon!
