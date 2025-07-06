@@ -99,6 +99,29 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
     ```
 ## Test
 
+Supervised Training on KITTI, we test on the rest of KIITI sequences:
+```
+# update test_utils.py
+par.multi_modal = False
+par.checkpoint_path = "saved_models/xvo_kitti_sl"
+par.test_video = {'KITTI': {'KITTI': ['03', '04', '05', '06', '07', '10']}}
+```
+
+Cross-Modal Self-Training on nuScenes and YouTube:
+```
+# update test_utils.py
+par.multi_modal = False
+par.checkpoint_path = "saved_models/xvo_nusc_ytb_ssl"
+# Evaluate the model sequentially on each of these datasets.
+# par.test_video = {'ARGO2': {'ARGO2': [str(i).zfill(3) for i in range(150)]}}
+# par.test_video = {'NUSC': {'NUSC': nusc_scene_map['boston-seaport']+nusc_scene_map['singapore-queenstown']+nusc_scene_map['singapore-onenorth']}}
+# par.test_video = {'KITTI': {'KITTI': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10']}}
+```
+and run:
+```
+python3 test_utils.py
+```
+
 ## Evaluation
 Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
 ```
