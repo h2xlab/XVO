@@ -21,7 +21,7 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 | KITTI  | [Link](https://www.cvlibs.net/datasets/kitti/eval_odometry.php)  |
 | Argoverse 2  | [Link](https://www.argoverse.org/av2.html#download-link)  |
 | nuScenes  | [Link](https://www.nuscenes.org/nuscenes#download)  |
-| YouTube  | Coming Soon |
+| YouTube  | Approximately 30 hours of driving footage were selected from videos published on the YouTube channel youtube.com/@jutah, featuring a diverse range of driving scenarios. A more comprehensive list of driving videos from YouTube can be found [here](https://docs.google.com/spreadsheets/d/1bHWWP_VXeEe5UzIG-QgKFBdH7mNlSC4GFSJkEhFnt2I/edit?gid=0#gid=0).|
 
 ### Environment Requirements and Installation
 ```bash
