@@ -74,7 +74,7 @@ We find that incorporating audio and segmentation tasks as part of the semi-supe
 </p>   
 
 ## Contact  
-Please don't hesitate to contact us if you have any remarks or questions at leilai@bu.edu or sgzk@bu.edu. 
+If you have any questions or comments, please feel free to contact us at leilai@bu.edu or sgzk@bu.edu.
 
 ## License  
 Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
