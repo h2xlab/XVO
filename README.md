@@ -43,7 +43,11 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
 ```
 
 ## Training 
-Coming soon!
+The correlation package must be installed first:
+```
+cd model/correlation_package
+python setup.py install
+```
 
 ## Evaluation
 ```
