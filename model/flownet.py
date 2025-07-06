@@ -1,4 +1,5 @@
 import torch.nn as nn
+from params import par
 from .MaskFlownet import *
 import yaml
 
@@ -25,11 +26,11 @@ class Reader:
     def value(self):
         return self._object
 
-class FlowNetS(nn.Module):
+class FlowNet(nn.Module):
     def __init__(self):
-        super(FlowNetS,self).__init__()
+        super(FlowNet, self).__init__()
 
-        with open("./data//kitti.yaml") as f:
+        with open(par.pretrained_flownet_path + "/kitti.yaml") as f:
             config = Reader(yaml.safe_load(f))
             
         self.maskflownet = MaskFlownet(config)
