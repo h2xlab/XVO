@@ -71,8 +71,10 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
     python3 preprocess.py
     ```
 3. **Download initial weights**
+
     Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/16v0U2RoRay7miYKb7LebKlXqZAe0d2tg?usp=sharing).
 4. **Run training**
+
     Supervised Training on KITTI:
     ```
     # update params.py
