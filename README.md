@@ -60,40 +60,41 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
 
 ## Training 
 1. **Install the correlation package**  
-
     The correlation package must be installed first:
     ```
     cd model/correlation_package
     python setup.py install
     ```
-The labels are available in the [poses](https://github.com/h2xlab/XVO/tree/main/poses) directory. To regenerate the labels or review the corresponding implementation details, please refer to the code and execute the following command:
-```
-python3 preprocess.py
-```
-Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/16v0U2RoRay7miYKb7LebKlXqZAe0d2tg?usp=sharing).
+2. **Preprocess the dataset**  
+    The labels are available in the [poses](https://github.com/h2xlab/XVO/tree/main/poses) directory. To regenerate the labels or review the corresponding implementation details, please refer to the code and execute the following command:
+    ```
+    python3 preprocess.py
+    ```
+3. **Download initial weights**
+    Download initial weights to [init_weights](https://github.com/h2xlab/XVO/tree/main/init_weights) directory. Initial weights can be found [here](https://drive.google.com/drive/folders/16v0U2RoRay7miYKb7LebKlXqZAe0d2tg?usp=sharing).
+4. **Run training**
+    Supervised Training on KITTI:
+    ```
+    # update params.py
+    self.train_video = {'KITTI': ['00', '02', '08', '09'],}
+    self.multi_modal = False
+    self.checkpoint_path = 'saved_models/xvo_kitti_sl'
+    ```
 
-Supervised Training on KITTI:
-```
-# update params.py
-self.train_video = {'KITTI': ['00', '02', '08', '09'],}
-self.multi_modal = False
-self.checkpoint_path = 'saved_models/xvo_kitti_sl'
-```
-
-Cross-Modal Self-Training on nuScenes and YouTube:
-```
-# update params.py
-self.train_video = {
-    'NUSC': nusc_scene_map['singapore-hollandvillage'],
-    'YouTube': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
-    }
-self.multi_modal = True
-self.checkpoint_path = 'saved_models/xvo_nusc_ytb_ssl'
-```
-and run:
-```
-python3 main.py
-```
+    Cross-Modal Self-Training on nuScenes and YouTube:
+    ```
+    # update params.py
+    self.train_video = {
+        'NUSC': nusc_scene_map['singapore-hollandvillage'],
+        'YouTube': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
+        }
+    self.multi_modal = True
+    self.checkpoint_path = 'saved_models/xvo_nusc_ytb_ssl'
+    ```
+    and run:
+    ```
+    python3 main.py
+    ```
 ## Test
 
 ## Evaluation
