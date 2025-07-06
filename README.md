@@ -82,6 +82,18 @@ python3 main.py
 ```
 
 Semi-supervised Training on nuScenes and YouTube:
+```
+# update params.py
+self.train_video = {
+    'NUSC': nusc_scene_map['singapore-hollandvillage'],
+    'YouTube': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
+    }
+self.multi_modal = True
+```
+and run:
+```
+python3 main.py
+```
 
 ## Evaluation
 Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
