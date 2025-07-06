@@ -108,7 +108,7 @@ par.checkpoint_path = "saved_models/xvo_kitti_sl"
 par.test_video = {'KITTI': {'KITTI': ['03', '04', '05', '06', '07', '10']}}
 ```
 
-Cross-Modal Self-Training on nuScenes and YouTube (We test on the KIITI, Argoverse 2, and rest of nuScenes):
+Cross-Modal Self-Training on nuScenes and YouTube (We test on the KITTI, Argoverse 2, and the unseen regions in nuScenes):
 ```
 # update test_utils.py
 par.multi_modal = False
