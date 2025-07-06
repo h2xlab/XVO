@@ -25,12 +25,17 @@ We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube vi
 
 The directory structure within the [data](https://github.com/h2xlab/XVO/tree/main/data) folder is organized as follows:
 ```bash
-my-dataset/ 
-├── dataset_info.json (optional metadata) 
-├── README.md (optional description) 
-    └── data/ 
-    ├── train.csv 
-    └── test.csv 
+data/ 
+├── KITTI/
+    ├── sequences/ 
+    └── poses/
+├── Argoverse 2/
+    ├── sequences/ 
+    └── poses/
+└── nuScenes/
+    ├── segmentations/ 
+    ├── sequences/ 
+    └── poses/
 ```
 
 ### Environment Requirements and Installation
