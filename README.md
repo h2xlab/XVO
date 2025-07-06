@@ -8,7 +8,7 @@
 This repository contains the code that accompanies our ICCV 2023 paper [XVO: Generalized Visual Odometry via Cross-Modal Self-Training](https://genxvo.github.io/resources/XVO.pdf). Please find our [project page](https://genxvo.github.io/) for more details. 
 
 <p>
-    <img alt="Example 1" src="images/generalized_vo.png" class="fit"/>
+    <img alt="Example 1" src="misc/generalized_vo.png" class="fit"/>
 </p>  
 
 ### Overview  
@@ -73,7 +73,7 @@ VO evaluation tool is revised from https://github.com/Huangying-Zhan/kitti-odom-
 ## Result   
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
 <p>
-    <img width=750 class="center" alt="Demo 1" src="images/qua_result.png"/ >  
+    <img width=750 class="center" alt="Demo 1" src="misc/qua_result.png"/ >  
 </p>   
 
 ## Contact  
