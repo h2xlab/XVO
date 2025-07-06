@@ -15,12 +15,12 @@ This repository contains the code that accompanies our ICCV 2023 paper [XVO: Gen
 We propose XVO, a semi-supervised learning method for training generalized monocular Visual Odometry (VO) models with robust off-the-self operation across diverse datasets and settings. Our XVO can efficiently learn to recover relative pose with real-world scale from visual scene semantics, i.e., without relying on any known camera parameters. Our key contribution is twofold. First, we empirically demonstrate the benefits of semi-supervised training for learning a general-purpose direct VO regression network. Second, we demonstrate multi-modal supervision, including segmentation, flow, depth, and audio auxiliary prediction tasks, to facilitate generalized representations for the VO task.   
 
 ### Dataset
-We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube videos (available soon). Please find their websites for dataset setup.  
+We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube videos. Please find their websites for dataset setup.  
 | Dataset  | Download Link |
 | ------------- | ------------- |
-| KITTI  | [Link](https://www.cvlibs.net/datasets/kitti/eval_odometry.php)  |
-| Argoverse 2  | [Link](https://www.argoverse.org/av2.html#download-link)  |
-| nuScenes  | [Link](https://www.nuscenes.org/nuscenes#download)  |
+| KITTI  | The Argoverse 2 dataset can be downloaded from the official source [here](https://www.cvlibs.net/datasets/kitti/eval_odometry.php). All other datasets, after processing, will adhere to the same directory structure as the KITTI dataset.  |
+| Argoverse 2  | The Argoverse 2 dataset can be downloaded from the official source [here](https://www.argoverse.org/av2.html#download-link). Once downloaded, the subset corresponding to the Visual Odometry (VO) task can be extracted using the provided script located in the /data directory.  |
+| nuScenes  | The NuScenes dataset can be downloaded from the official source [here](https://www.nuscenes.org/nuscenes#download). Once downloaded, the subset corresponding to the Visual Odometry (VO) task can be extracted using the provided script located in the /data directory.  |
 | YouTube  | Approximately 30 hours of driving footage were selected from videos published on the YouTube channel youtube.com/@jutah, featuring a diverse range of driving scenarios. A more comprehensive list of driving videos from YouTube can be found [here](https://docs.google.com/spreadsheets/d/1bHWWP_VXeEe5UzIG-QgKFBdH7mNlSC4GFSJkEhFnt2I/edit?gid=0#gid=0).|
 
 ### Environment Requirements and Installation
