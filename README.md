@@ -11,10 +11,10 @@ This repository contains the code that accompanies our ICCV 2023 paper [XVO: Gen
     <img alt="Example 1" src="misc/generalized_vo.png" class="fit"/>
 </p>  
 
-### Overview  
+## Overview  
 We propose XVO, a semi-supervised learning method for training generalized monocular Visual Odometry (VO) models with robust off-the-self operation across diverse datasets and settings. Our XVO can efficiently learn to recover relative pose with real-world scale from visual scene semantics, i.e., without relying on any known camera parameters. Our key contribution is twofold. First, we empirically demonstrate the benefits of semi-supervised training for learning a general-purpose direct VO regression network. Second, we demonstrate multi-modal supervision, including segmentation, flow, depth, and audio auxiliary prediction tasks, to facilitate generalized representations for the VO task.   
 
-### Dataset
+## Dataset
 We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube videos. Please find their websites for dataset setup.  
 | Datasets  | Download Link |
 | ------------- | ------------- |
@@ -39,7 +39,7 @@ data/
 ```
 The nuScenes dataset requires segmentation labels to support the cross-modal self-training process. Precomputed segmentations are available [here](https://drive.google.com/drive/folders/1sOhguNCihWHrPNlCexHyUe_grgaNcQF8?usp=sharing). Alternatively, users may regenerate the segmentation annotations using recent state-of-the-art segmentation models.
 
-### Environment Requirements and Installation
+## Environment Requirements and Installation
 ```bash
 # create a new environment
 conda create -n XVO python=3.9
@@ -58,7 +58,7 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-python==4.11.0.86 a-unet==0.0.16 mmcv-full==1.7.2 numpy==1.26.4 pillow==11.0.0 av2==0.2.1 nuscenes-devkit==1.1.11
 ```
 
-### Training 
+## Training 
 1. **Install the correlation package**  
     The correlation package must be installed first:
     ```
@@ -97,7 +97,7 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
     ```
     python3 main.py
     ```
-### Test
+## Test
 Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
 
 Supervised Training on KITTI, we test on the rest of KIITI sequences:
@@ -123,7 +123,7 @@ and run:
 python3 test_utils.py
 ```
 
-### Evaluation
+## Evaluation
 
 ```
 cd odom-eval
@@ -136,14 +136,14 @@ python3 eval.py
 ```
 VO evaluation tool is revised from https://github.com/Huangying-Zhan/kitti-odom-eval.
 
-### Result   
+## Result   
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
 <p>
     <img width=750 class="center" alt="Demo 1" src="misc/qua_result.png"/ >  
 </p>   
 
-### Contact  
+## Contact  
 If you have any questions or comments, please feel free to contact us at leilai@bu.edu or sgzk@bu.edu.
 
-### License  
+## License  
 Our work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].  
