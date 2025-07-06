@@ -14,7 +14,7 @@ This repository contains the code that accompanies our ICCV 2023 paper [XVO: Gen
 ## Overview  
 We propose XVO, a semi-supervised learning method for training generalized monocular Visual Odometry (VO) models with robust off-the-self operation across diverse datasets and settings. Our XVO can efficiently learn to recover relative pose with real-world scale from visual scene semantics, i.e., without relying on any known camera parameters. Our key contribution is twofold. First, we empirically demonstrate the benefits of semi-supervised training for learning a general-purpose direct VO regression network. Second, we demonstrate multi-modal supervision, including segmentation, flow, depth, and audio auxiliary prediction tasks, to facilitate generalized representations for the VO task.   
 
-## Dataset
+## Datasets
 We use KITTI, Argoverse 2 and nuScenes dataset along with in-the-wild YouTube videos. Please find their websites for dataset setup.  
 | Datasets  | Download Link |
 | ------------- | ------------- |
@@ -100,7 +100,7 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
 ## Test
 Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
 
-Supervised Training on KITTI, we test on the rest of KIITI sequences:
+Supervised Training on KITTI (We test on the rest of KIITI sequences):
 ```
 # update test_utils.py
 par.multi_modal = False
@@ -108,7 +108,7 @@ par.checkpoint_path = "saved_models/xvo_kitti_sl"
 par.test_video = {'KITTI': {'KITTI': ['03', '04', '05', '06', '07', '10']}}
 ```
 
-Cross-Modal Self-Training on nuScenes and YouTube:
+Cross-Modal Self-Training on nuScenes and YouTube (We test on the KIITI, Argoverse 2, and rest of nuScenes):
 ```
 # update test_utils.py
 par.multi_modal = False
