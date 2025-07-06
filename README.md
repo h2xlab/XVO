@@ -48,7 +48,7 @@ The correlation package must be installed first:
 cd model/correlation_package
 python setup.py install
 ```
-Initial weights can be found [here]()
+Download initial weights to init_weights directory. Initial weights can be found [here](https://drive.google.com/drive/folders/1hS1wsrv89d_zakfXt2lJBaqNnF5FfoHg?usp=sharing).
 
 Supervised Training on KITTI:
 Semi-supervised Training on nuScenes and YouTube:
