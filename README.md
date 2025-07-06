@@ -81,7 +81,7 @@ and run:
 python3 main.py
 ```
 
-Semi-supervised Training on nuScenes and YouTube:
+Cross-Modal Self-Training on nuScenes and YouTube:
 ```
 # update params.py
 self.train_video = {
