@@ -31,11 +31,11 @@ conda activate XVO
 # install pytorch
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
 conda install -c iopath iopath
-#install pytorch3d
+# install pytorch3d
 wget https://anaconda.org/pytorch3d/pytorch3d/0.7.5/download/linux-64/pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
 conda install pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
 sudo rm pytorch3d-0.7.5-py39_cu117_pyt201.tar.bz2
-
+# export CUDA 11.7 
 export CUDA_HOME=/usr/local/cuda-11.7
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
