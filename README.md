@@ -27,15 +27,15 @@ The directory structure within the [data](https://github.com/h2xlab/XVO/tree/mai
 ```bash
 data/ 
 ├── KITTI/
-│    ├── sequences/ 
-│    └── poses/
+│   ├── sequences/ 
+│   └── poses/
 ├── Argoverse 2/
-│    ├── sequences/ 
-│    └── poses/
-└── nuScenes/
-    ├── segmentations/ 
-    ├── sequences/ 
-    └── poses/
+│   ├── sequences/ 
+│   └── poses/
+├── nuScenes/
+│   ├── segmentations/ 
+│   ├── sequences/ 
+│   └── poses/
 ```
 The nuScenes dataset requires segmentation labels to support the cross-modal self-training process. Precomputed segmentations are available [here](https://drive.google.com/drive/folders/1sOhguNCihWHrPNlCexHyUe_grgaNcQF8?usp=sharing). Alternatively, users may regenerate the segmentation annotations using recent state-of-the-art segmentation models.
 
@@ -139,7 +139,7 @@ VO evaluation tool is revised from https://github.com/Huangying-Zhan/kitti-odom-
 ## Result   
 We find that incorporating audio and segmentation tasks as part of the semi-supervised learning process significantly improves ego-pose estimation on KITTI.   
 <p>
-    <img width=750 class="center" alt="Demo 1" src="misc/qua_result.png"/ >  
+    <img width=750 class="center" alt="Demo 1" src="misc/qua_result.png" class="fit"/>  
 </p>   
 
 ## Contact  
