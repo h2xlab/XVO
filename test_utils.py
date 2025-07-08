@@ -43,13 +43,11 @@ def visualizer(ep):
                 scene_num = dir.split('/')[-1].split('.')[0]
 
                 if 'KITTI' in map:
-                    gt_pose_path = './vo-eval-tool/dataset/kitti/gt_poses/' + dir.split('/')[-1]
+                    gt_pose_path = './odom-eval/dataset/kitti/gt_poses/' + dir.split('/')[-1]
                 elif 'NUSC' in map:
-                    gt_pose_path = './vo-eval-tool/dataset/nusc/gt_poses/' + dir.split('/')[-1]
+                    gt_pose_path = './odom-eval/dataset/nusc/gt_poses/' + dir.split('/')[-1]
                 elif 'ARGO2' in map:
-                    gt_pose_path = './vo-eval-tool/dataset/argo2/gt_poses/' + dir.split('/')[-1]
-                elif 'GTA' in map:
-                    gt_pose_path = './vo-eval-tool/dataset/gta/gt_poses/' + dir.split('/')[-1]
+                    gt_pose_path = './odom-eval/dataset/argo2/gt_poses/' + dir.split('/')[-1]
                 with open(gt_pose_path) as f:
                     gt_poses = np.array([[float(x) for x in line.split()] for line in f], dtype=np.float32)
                     
@@ -77,69 +75,6 @@ def visualizer(ep):
                 plt.savefig('./results/{}/{}/{}/{}.png'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map, scene_num))
                 plt.close(fig)
 
-
-# def test(model, ep):
-
-#     testing_data = {'KITTI_test': {'KITTI': ['03', '04', '05', '06', '07', '10']}}
-
-#     model.eval()
-
-#     for map, value in testing_data.items():
-#         print(map)
-#         st_t = time.time()
-#         if not os.path.exists('./results/{}/{}/{}'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map)):
-#             os.makedirs('./results/{}/{}/{}'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map))
-
-
-#         df = get_data_info(value, args, mode='test')
-#         dataset = VisualOdometryDataset(df, (args.img_h, args.img_w), mode='test')
-#         dataloader = DataLoader(
-#             dataset, 
-#             batch_size=8, 
-#             shuffle=False, 
-#             num_workers=args.n_processors,
-#             pin_memory=True,
-#         )
-
-#         poses_dict = {}
-#         with torch.no_grad():
-#             for step, (img_paths, x, y, intrs, intrs_map, depth_map0, depth_map1, depth_3d, text_features) in enumerate(tqdm(dataloader)):
-
-#                 x, y, intrs, intrs_map, depth_map0, depth_map1, depth_3d, text_features = x.to('cuda'), y.to('cuda'), intrs.to('cuda'), intrs_map.to('cuda'), depth_map0.to('cuda'), depth_map1.to('cuda'), depth_3d.to('cuda'), text_features.to('cuda')
-#                 predicted_p, predicted_r = model.forward(x, intrs, intrs_map, depth_map0, depth_map1, depth_3d, text_features)
-#                 predicted_p = predicted_p.view(-1,6).data.cpu().numpy()
-#                 pred_orth = fisher_NLL(predicted_r, None, overreg=1.025)
-#                 pred_orth = pred_orth.data.cpu().numpy()
-
-#                 for i in range(len(predicted_p)):
-#                     _scene = img_paths[i].split('/')[-3]
-#                     if _scene not in poses_dict.keys():
-#                         poses_dict[_scene] = []
-                    
-#                     poses_dict[_scene].append(list(predicted_p[i]) + list(pred_orth[i].flatten()))
-        
-#         for _scene in poses_dict.keys():
-#             abs_est = [[1.0,0.0,0.0,0.0,
-#                         0.0,1.0,0.0,0.0,
-#                         0.0,0.0,1.0,0.0]]
-#             T = np.eye(4)
-#             for _pose in poses_dict[_scene]:
-
-#                 R = np.array(_pose[6:]).reshape(3, 3)
-#                 t = np.array(_pose[:3]).reshape(3, 1)
-#                 T_r = np.concatenate((np.concatenate([R, t], axis=1), [[0.0, 0.0, 0.0, 1.0]]), axis=0)
-#                 T_abs = np.dot(T, T_r)
-#                 T = T_abs
-#                 abs_est.append(T[0:3, :].flatten().tolist())
-
-#             with open('./results/{}/{}/{}/{}.txt'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map, _scene), 'w') as f:
-#                 for pose in abs_est:
-#                     f.write(' '.join(str(e) for e in pose))
-#                     f.write('\n')
-            
-#         print(f'{time.time()-st_t} seconds')
-
-
 def fast_test(par):
 
     model = VOModel()
@@ -166,34 +101,13 @@ def fast_test(par):
             print(f'Load model {_pth}')
             ep = _pth.split('.')[0].split('-')[-1]
 
-            # if int(ep) in [i for i in range(30, 62, 3)]:
-            #     pass
-            # if int(ep) >= 40 and int(ep) < 80:
-            #     pass
-            # if int(ep) >= 80 and int(ep) < 120:
-            #     pass
-            # if int(ep) >= 120 and int(ep) <= 166:
-            #     pass
-            # if int(ep) != 124 and int(ep) != 37:
-            #     continue
-
             if not os.path.exists('./results/{}/{}/{}'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map)):
                 os.makedirs('./results/{}/{}/{}'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map))
             elif os.listdir('./results/{}/{}/{}'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map)):
                 continue
-            # if not os.path.exists('./results/{}/{}/{}_angle'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map)):
-            #     os.makedirs('./results/{}/{}/{}_angle'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map))
 
             checkpoint = torch.load(_pth)
-            # model.load_state_dict(checkpoint['model_state_dict'])
             pretrained_dict = {k: v for k, v in checkpoint['model_state_dict'].items() if k in model_dict.keys()}
-            # print(len(checkpoint['model_state_dict'].keys()))
-            # print('**********')
-            # print(len(model_dict.keys()))
-            # print('**********')
-            # print(len(pretrained_dict.keys()))
-            # print('**********')
-            # assert 0
             model.load_state_dict(pretrained_dict)
             model.eval()
 
@@ -239,8 +153,9 @@ def fast_test(par):
 if __name__ == '__main__':
 
     par.multi_modal = False
-    par.checkpoint_path = "/data2/lei/DeepVO/Experiment_checkpoints/h2xlab_XVO/sl/xvo_complete_nusc_ytb_ssl_b6_lr0005"
+    par.checkpoint_path = "/data2/lei/DeepVO/Experiment_checkpoints/h2xlab/XVO/xvo_complete_kitti_sl_b6_lr0005"
     # par.test_video = {'ARGO2': {'ARGO2': [str(i).zfill(3) for i in range(150)]}}
     # par.test_video = {'NUSC': {'NUSC': nusc_scene_map['boston-seaport']+nusc_scene_map['singapore-queenstown']+nusc_scene_map['singapore-onenorth']}}
-    par.test_video = {'KITTI': {'KITTI': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10']}}
+    # par.test_video = {'KITTI': {'KITTI': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10']}}
+    par.test_video = {'KITTI': {'KITTI': ['03', '04', '05', '06', '07', '10']}}
     fast_test(par)
