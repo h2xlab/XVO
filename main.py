@@ -2,8 +2,6 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "1" 
 from model import *
 from dataset import *
-# from preprocess import *
-# from test_utils import test, visualizer
 import numpy as np
 import random
 import time

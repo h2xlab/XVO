@@ -6,9 +6,7 @@ from kitti_odometry import KittiEvalOdom
 import json
 from tqdm import tqdm
 
-eval_dirs = [
-            'ZVO',
-            ]
+eval_dirs = ['xvo_complete_kitti_sl_b8_lr0005',]
 
 eval_tool = KittiEvalOdom()
 kitti_gt_dir = "./dataset/kitti/gt_poses/"

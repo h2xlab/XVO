@@ -28,8 +28,8 @@ class Parameters():
 		self.seed = 2023
 		self.epochs = 150
 		self.learning_rate = 0.0005
-		self.batch_size = 6
-		self.checkpoint_path = '/data2/lei/DeepVO/Experiment_checkpoints/h2xlab/XVO/xvo_complete_kitti_sl_b6_lr0005'
+		self.batch_size = 8
+		self.checkpoint_path = '/data2/lei/DeepVO/Experiment_checkpoints/h2xlab/XVO/xvo_complete_kitti_sl_b8_lr0005'
 		self.pretrained_flownet_path = '/data/lei/DeepVO/FlowNet_checkpoints/MaskFlownet'
 
 par = Parameters()

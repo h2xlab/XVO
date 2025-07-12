@@ -4,4 +4,4 @@ model/correlation_package/__pycache__/
 odom-eval/__pycache__/
 odom-eval/evaluation_results/
 data/*.pt
-results/KITTI/*
+results/*

@@ -75,6 +75,24 @@ def visualizer(ep):
                 plt.savefig('./results/{}/{}/{}/{}.png'.format(par.checkpoint_path.split('/')[-1], str(ep).zfill(3), map, scene_num))
                 plt.close(fig)
 
+
+def eulerAnglesToRotationMatrix(theta):
+    R_x = np.array([[1, 0, 0],
+                    [0, np.cos(theta[0]), -np.sin(theta[0])],
+                    [0, np.sin(theta[0]), np.cos(theta[0])]
+                    ])
+    R_y = np.array([[np.cos(theta[1]), 0, np.sin(theta[1])],
+                    [0, 1, 0],
+                    [-np.sin(theta[1]), 0, np.cos(theta[1])]
+                    ])
+    R_z = np.array([[np.cos(theta[2]), -np.sin(theta[2]), 0],
+                    [np.sin(theta[2]), np.cos(theta[2]), 0],
+                    [0, 0, 1]
+                    ])
+    R = np.dot(R_z, np.dot(R_y, R_x))
+    return R
+
+
 def fast_test(par):
 
     model = VOModel()
@@ -135,7 +153,8 @@ def fast_test(par):
                 T = np.eye(4)
                 for _pose in poses_dict[_scene]:
 
-                    R = np.array(_pose[6:]).reshape(3, 3)
+                    # R = np.array(_pose[6:]).reshape(3, 3)
+                    R = eulerAnglesToRotationMatrix([_pose[3]*3.1415926/180, _pose[4]*3.1415926/180, _pose[5]*3.1415926/180])
                     t = np.array(_pose[:3]).reshape(3, 1)
                     T_r = np.concatenate((np.concatenate([R, t], axis=1), [[0.0, 0.0, 0.0, 1.0]]), axis=0)
                     T_abs = np.dot(T, T_r)
@@ -153,7 +172,7 @@ def fast_test(par):
 if __name__ == '__main__':
 
     par.multi_modal = False
-    par.checkpoint_path = "/data2/lei/DeepVO/Experiment_checkpoints/h2xlab/XVO/xvo_complete_kitti_sl_b6_lr0005"
+    par.checkpoint_path = "/data2/lei/DeepVO/Experiment_checkpoints/h2xlab/XVO/xvo_complete_kitti_sl_b8_lr0005"
     # par.test_video = {'ARGO2': {'ARGO2': [str(i).zfill(3) for i in range(150)]}}
     # par.test_video = {'NUSC': {'NUSC': nusc_scene_map['boston-seaport']+nusc_scene_map['singapore-queenstown']+nusc_scene_map['singapore-onenorth']}}
     # par.test_video = {'KITTI': {'KITTI': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10']}}
