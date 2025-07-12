@@ -98,9 +98,20 @@ pip install PyYAML==6.0.2 timm==1.0.16 matplotlib==3.5.3 pandas==2.3.0 opencv-py
     python3 main.py
     ```
 ## Test
-Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here].
+Dwonload model checkpoints to [saved_models](https://github.com/h2xlab/XVO/tree/main/saved_models) directory. Model checkpoints can be found [here](https://drive.google.com/drive/folders/1PY4lJlqZj8xhPAh93kaOGlFfvwqnaHan?usp=drive_link).
 
-Supervised Training on KITTI (We test on the rest of KIITI sequences):
+Supervised Training on KITTI. We evaluate our model on the remaining KITTI sequences. Two checkpoints were released, achieving the following metrics respectively:
+- **Checkpoint 1:**  
+  - Translation Error (t_err): 3.35  
+  - Rotation Error (r_err): 1.61  
+  - Absolute Trajectory Error (ATE): 13.29  
+  - Scale Error (s_err): 0.04  
+
+- **Checkpoint 2:**  
+  - Translation Error (t_err): 3.22  
+  - Rotation Error (r_err): 1.65  
+  - Absolute Trajectory Error (ATE): 12.94  
+  - Scale Error (s_err): 0.04
 ```
 # update test_utils.py
 par.multi_modal = False
